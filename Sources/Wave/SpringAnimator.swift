@@ -238,9 +238,9 @@ public class SpringAnimator<T: SpringInterpolatable>: AnimatorProviding {
         }
 
         if animationFinished {
+            self.state = .ended
             // If an animation finishes on its own, call the completion handler with value `target`.
             completion?(.finished(at: target))
-            self.state = .ended
         }
     }
 }
